@@ -16,7 +16,9 @@ The short insert library and both mate pair libaries were accessed from NCBI by:
 prefetch ${SRR}
 
 The genome was accessed and indexed by:
+```
 bwa index ${SRR}
+```
 
 
 
