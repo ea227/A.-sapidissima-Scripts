@@ -22,6 +22,7 @@ GNU license? #should we put something like this in?
 Data Accession and Cleaning: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Data%20Accession%20and%20Cleaning.md
 Quality Control: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Quality%20Control.md
 Alignment and Processing: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Alignment%20and%20Processing.md
+R Analyses: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Rscripts.md
 
 **Software and Programs Used**
 
