@@ -73,4 +73,17 @@ bcftools \
            -G10 \ 
            -Ov | \ 
         bgzip -c > shad.vcf.gz 
-        ```
+```
+bcftools was then used to index the VCF, generate stats, and filter the VCF further:
+```
+bcftools index --threads 24 shad.vcf.gz 
+bcftools stats shad.vcf.gz > shad.SNPs.stats 
+bcftools view -f 'PASS' -O v shad.vcf.gz | bgzip -c > shad.filtered.vcf.gz 
+bcftools stats -f "PASS" shad.filtered.vcf.gz > shad.filtered.SNPs.stats
+```
+
+Variant information was accessed for 20000 bp windows using vcftools v0.1.17, and output as a .tsv file:
+```
+vcftools --gzvcf shad.vcf.gz --SNPDensity 20000 --out filename
+```
+
