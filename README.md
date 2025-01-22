@@ -34,8 +34,8 @@ Alignment and Processing: https://github.com/ea227/A.-sapidissima-Scripts/blob/m
 | bcftools | 1.10.2 | Danecek, P., Auton, A., Abecasis, G., Albers, C.A., Banks, E., DePristo, M.A., Handsaker, R., Lunter, G., Marth, G., Sherry, S.T., McVean, G., Durbin, R., and 1000 Genomes Project Analysis Group, (2011). The Variant Call Format and VCFtools. Bioinformatics, 27(15), 2156-2158. https://doi.org/10.1093/bioinformatics/btr330 |
 | vcftools | 0.1.17 | Danecek, P., Auton, A., Abecasis, G., Albers, C.A., Banks, E., DePristo, M.A., Handsaker, R., Lunter, G., Marth, G., Sherry, S.T., McVean, G., Durbin, R., and 1000 Genomes Project Analysis Group, (2011). The Variant Call Format and VCFtools. Bioinformatics, 27(15), 2156-2158. https://doi.org/10.1093/bioinformatics/btr330 |
 | R | 4.4.1 |  R Core Team (2024). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.|
-| tidyverse |  | Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686.|
-|  ggplot 2 |  | H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. |
+| tidyverse | 2.0.0 | Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686.|
+|  ggplot 2 | 3.5.1 | H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. |
 
 
 
