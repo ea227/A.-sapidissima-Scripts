@@ -9,12 +9,16 @@ bwa mem \ #Aligning libraries to reference genome
    $r1 \ 
    $r2 | \ 
 ```
-
+samtools v 1.10.2 was used to sort alignments:
+```
 samtools sort \ 
    -T ${out}.tmp \ 
    -n \ 
    -@ 16 \ 
-   - | \ 
+   - | \
+```
+samtools fixmate was used to fill in paired end reads onto the corresponding read, and sorted again to be output as BAM files, which were then checked for duplicates using markdup:
+```
    samtools fixmate \ 
       -@ 16 \ 
       -m \ 
@@ -23,21 +27,31 @@ samtools sort \
          -T ${out}.tmp2 \ 
          -O bam \ 
          -@ 16 \ 
-         - | \ 
+         - | \
          samtools markdup \ 
              -T ${out}.tmp3 \ 
              -O bam \ 
              -@ 16 \ 
-             - ${out}.sorted.bam 
-samtools merge \ #Merging resulting bam files  
+             - ${out}.sorted.bam
+```
+The resulting BAM files were merged with samtools merge:
+```
+samtools merge \ 
         --threads 24 \ 
         -o shad.merged.bam \ 
         Path$(SRR)  \ 
         Path$(SRR)   \     
-        Path${SRR} 
+        Path${SRR}
+```
+The merged alignment was then idexed and bamstats was used to generate statistics:
+
+```
 samtools index shad.merged.bam #Indexing merged bam file 
-samtools stats -@ 24 shad.merged.bam > shad.merged.bamstats  #Generating bamstats file 
-bcftools \  #Calling SNPs from merged bam 
+samtools stats -@ 24 shad.merged.bam > shad.merged.bamstats  
+```
+Variants were called with bcftools v1.10.2 mpileup, filtered, and output as a gzipped VCF:
+```
+bcftools \  
         mpileup \ 
         -C 50 \ 
         -q 20 \ 
@@ -62,3 +76,4 @@ bcftools \  #Calling SNPs from merged bam
            -G10 \ 
            -Ov | \ 
         bgzip -c > shad.vcf.gz 
+        ```
