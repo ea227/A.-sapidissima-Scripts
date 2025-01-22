@@ -9,16 +9,13 @@ bwa mem \ #Aligning libraries to reference genome
    $r1 \ 
    $r2 | \ 
 ```
-samtools v 1.10.2 was used to sort alignments:
+samtools v 1.10.2 was used to sort BAM files numerically, fixmates to add mate score tag and markdup to identify  duplicates:
 ```
 samtools sort \ 
    -T ${out}.tmp \ 
    -n \ 
    -@ 16 \ 
    - | \
-```
-samtools fixmate was used to fill in paired end reads onto the corresponding read, and sorted again to be output as BAM files, which were then checked for duplicates using markdup:
-```
    samtools fixmate \ 
       -@ 16 \ 
       -m \ 
@@ -43,7 +40,7 @@ samtools merge \
         Path$(SRR)   \     
         Path${SRR}
 ```
-The merged alignment was then idexed and bamstats was used to generate statistics:
+The merged alignment was then processed:
 
 ```
 samtools index shad.merged.bam #Indexing merged bam file 
