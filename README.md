@@ -1,4 +1,5 @@
 Supplementary Methods for:
+
 **Analyses of variant data across the whole genome of the American Shad, _Alosa sapidissima_**
 
 Authors: order? 
@@ -17,7 +18,8 @@ All project, sample information, and raw sequencing data are publicly available 
 GNU license? #should we put something like this in?
 
 **Table of Contents**
-Data Accession
+Alignment and Processing.md
+
 
 
 
