@@ -1,4 +1,6 @@
-Cleaned sequence data for each library was wuality controlled and preprocessed using fastp v0.20.0:
+**Quality Control**
+
+Cleaned sequence data for each library was quality controlled and preprocessed using fastp v0.20.0:
 ```
 fastp \ #Quality control and preprocessing of raw sequencing data  
     --in1=${r1} \ 
@@ -26,3 +28,26 @@ fastp \ #Quality control and preprocessing of raw sequencing data
     --out1 cleaned/${SRR}.finalclean_1.fq.gz \ 
     --out2 cleaned/${SRR}.finalclean_2.fq.gz
 ```
+fastp parameters: 
+Parameters Explained:
+--in1/--in2 :: input forward and reverse read files, recognizes gzip
+--stdout :: write to standard out for piping
+--adapter_fasta file :: a file of known Illumina adapters to trim
+--cut_front :: enable a 5' sliding window trimmer, like trimmomatic
+--cut_tail :: enable a 3' sliding window trimmer, like trimmomatic
+--cut_window_size=4 :: window size for the trimming
+--cut_mean_quality=20 :: mean base score across the window required, or else trim the last base
+--qualified_quality_phred=20 :: minimum base quality score to keep
+--average_qual=20 :: remove read of the average quality across all bases is < 20
+--unqualified_percent_limit=30 :: Percent of bases allowed to be less than q in a read
+--n_base_limit=5 :: if one read's number of N bases is >5, then this read pair is discarded
+--length_required=50 :: minimum read length to keep after trimming
+--low_complexity_filter :: filter sequences with a low complexity
+--complexity_threshold=30 :: threshold for sequence complexity filter
+--overrepresentation_analysis :: look for overrepresented sequences, like adapters
+--trim_poly_x :: trim strings of homopolymers at the 3' end of reads
+--poly_x_min_len 10 :: minimum length of homopolymer ot trim
+--json=${out}.json :: output file name, JSON format
+--html=${out}.html :: output file name, HTML format
+--report_title="$out" :: output report tile
+--thread=${threads} :: number of cpus to use
