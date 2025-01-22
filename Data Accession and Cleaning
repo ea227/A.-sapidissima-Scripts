@@ -6,4 +6,7 @@ All sequence data referenced herein are attributed to an award from the The Sequ
 Center for Genomic and Computational Biology (Duke University). Sequencing was done by (R Fitak, etc. edit this). Samples and assistance were provided 
 by Stephen Jackson and Kevin Dockendorf at the Edenton National Fish Hatchery. (bob edit?). 
 
-accessed from NCBI using SRA prefetch a
+**Data Accession** 
+The short insert library and both mate pair libaries were accessed from NCBI by:
+prefetch ${SRR}
+
