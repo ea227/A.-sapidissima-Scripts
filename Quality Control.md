@@ -29,12 +29,15 @@ fastp \ #Quality control and preprocessing of raw sequencing data
     --out2 cleaned/${SRR}.finalclean_2.fq.gz
 ```
 fastp parameters: 
-Parameters Explained:
---in1/--in2 :: input forward and reverse read files, recognizes gzip
---stdout :: write to standard out for piping
---adapter_fasta file :: a file of known Illumina adapters to trim
---cut_front :: enable a 5' sliding window trimmer, like trimmomatic
---cut_tail :: enable a 3' sliding window trimmer, like trimmomatic
+
+--in1/--in2: input forward and reverse read files, recognizes gzip
+
+--stdout:write to standard out for piping
+
+--adapter_fasta file:a file of known Illumina adapters to trim
+
+--cut_front: enable a 5' sliding window trimmer, like trimmomatic
+--cut_tail;enable a 3' sliding window trimmer, like trimmomatic
 --cut_window_size=4 :: window size for the trimming
 --cut_mean_quality=20 :: mean base score across the window required, or else trim the last base
 --qualified_quality_phred=20 :: minimum base quality score to keep
