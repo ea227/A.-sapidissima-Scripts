@@ -1,8 +1,8 @@
-setwd("~/Desktop/shads/shadsprojectdata")
-library(tidyverse)
-library(readxl)
+**R code for data anylses**
 
-#snp variants from samtools
+
+snp variants from samtools (may not include code for simple plot:
+```
 snpsxscaf <- read_xlsx("samtoolsdata.xlsx")
 View(snpsxscaf)
 # rename
@@ -42,7 +42,8 @@ snpschromo$Chromosome <-factor(snpschromo$Chromosome,
           ))))
 
 str(snpschromo)
-#this looks good (laurens ggplot)
+#this looks good
+
  
 ggplot(snpschromo, aes(x = Chromosome, y = Variants)) +  
   geom_bar(stat = "identity", fill = "navy", color = "black") +  # Add black outline 
@@ -56,8 +57,9 @@ ggplot(snpschromo, aes(x = Chromosome, y = Variants)) +
     axis.text.x = element_text(size = 15),   # Increase x-axis text font size 
     axis.text.y = element_text(size = 15)    # Increase y-axis text font size 
   ) 
-
-### SNP DENSITY GOOD TO GO
+```
+SNP density from .tsv output:
+```
 snpdens <- read_tsv("snpdens.tsv")
 str(snpdens)
 unique(snpdens$CHROM)
@@ -106,7 +108,9 @@ snpplot <- ggplot(snpdenchr, aes(x = BIN_START, y = `VARIANTS/KB`, color = CHROM
   facet_wrap(~CHROM, scales = "free_x")
 
 print(snpplot)
-
+```
+Highest and lowest densities (may not include):
+```
 #Calculate mean from SNP density column, take take lowest 2.5 and highest 97.5 % 
 
 rowMeans(snpdenchr)
@@ -140,7 +144,7 @@ bot <- ggplot(bot_2.5, aes(x = BIN_START, y = `VARIANTS/KB`, color = CHROM)) +
 #export top 97 and bottom 2.5 as csv files
 write.csv(top_97_5, "top_97_5.csv", row.names = FALSE)
 write.csv(bot_2.5, "bot_2_5.csv", row.names = FALSE)
-
+```
 #Tara insert data 
 
 
