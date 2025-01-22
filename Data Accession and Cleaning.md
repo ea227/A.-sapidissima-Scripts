@@ -1,4 +1,4 @@
-** Introduction **
+**Introduction**
 
 The bioinformatic analysis of the raw sequencing reads described here, including links and citations to programs, and software versions, and
 the scripts used. All analyses were run on the coombs computer cluster at the University of Central Florida (UCF).
@@ -13,7 +13,9 @@ Reid Hyle collected a sample for Nina Overgaard Therkildsen from the St. Johns R
 
 **Data Accession** 
 The short insert library and both mate pair libaries were accessed from NCBI by:
+```
 prefetch ${SRR}
+```
 
 The genome was accessed and indexed by:
 ```
