@@ -1,21 +1,31 @@
-Supplementary Methods for:
+<h3><p align="center">Supplementary Methods for:</p></h3>
 
-**Analyses of variant data across the whole genome of the American Shad, _Alosa sapidissima_**
+<h2><p align="center">Analyses of variant data across the whole genome of the American Shad, <i>Alosa sapidissima</i></p></h2>
 
-Authors: order? 
+<I><h5>Ella S. Adams-Herrmann<sup>1</sup>, Lauren Deaner<sup>1</sup>, Tara Morgan<sup>1</sup>, Sönke Johnsen<sup>2</sup>,  Benjamin R. Wheeler<sup>2,3</sup>, Robert R. Fitak<sup>1</sup></h5></I>
 
-**Raw Data**
+1. Department of Biology, Genomics and Bioinformatics Cluster, University of Central Florida, Orlando, FL 32816, USA
+2. Department of Biology, Duke University, 130 Science Drive, Durham, NC 27708, USA
+3. Bigelow Laboratory for Ocean Sciences, 60 Bigelow Drive, East Boothbay, ME 04544, USA 
+
+## **Raw Data**
 
 All project, sample information, and raw sequencing data are publicly available and can be accessed by the following NCBI accession numbers:
 
-| SRA Accession | Data Type       |
-| ------------- | -------------   |
-|  PRJNA728145  | Reference genome|
-| SRX4806914  | Short Insert Library  |
-| SRX4806913  | Mate Pair Library  |
-| SRX4806912  | Mate Pair Library  |
+| Accession | Database | Data Type |
+| ------------- | ------------- | ---------- |
+|  [PRJNA728145](https://www.ncbi.nlm.nih.gov/bioproject/487080)  | BioProject | Project Information |
+| [SAMN09873042](https://www.ncbi.nlm.nih.gov/biosample/SAMN09873042) | BioSample | Sample metadata |
+| [SRR7973879](https://www.ncbi.nlm.nih.gov/sra/SRR7973879) | Sequence Read Archive (SRA) | Short Insert, Paired-End Library  |
+| [SRR7973880](https://www.ncbi.nlm.nih.gov/sra/SRR7973880) | Sequence Read Archive (SRA) | Long-insert, Mate-pair library (5-7 kb insert size)  |
+| [SRR7973881](https://www.ncbi.nlm.nih.gov/sra/SRR7973881) | Sequence Read Archive (SRA) | Long-insert, Mate-pair library (10-12 kb insert size)  |
 
-GNU license? #should we put something like this in?
+***
+___This GitHub repository contains a summary of the various code, software, and data analysis pipelines used for the aforementioned study of the American shad. The contents represented here are only to be used as an example and not intended to be comeprehensive. The authors make no representation about the suitability or accuracy of this code, software, or data for any purpose, and make no warranties, either expressed or implied, for a particular purpose or that the use of this software or data will not infringe any third party patents, copyrights, trademarks, or other rights. The code, software and data are provided "as is". All content is hereby registered under the GNU General Public License v3.0, see [LICENSE](./LICENSE). Any publication that significantly relies upon the use of the content generated herein shall appropriately cite:___
+
+<p align="center">Fackler et al. (in prep.) The influence of genes on the migratory timing of great reed warblers (<i>Acrocephalus arundinaceus</i>). TBD</p>
+
+***
 
 **Table of Contents**
 
