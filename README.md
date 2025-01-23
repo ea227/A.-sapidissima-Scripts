@@ -14,25 +14,25 @@ All project, sample information, and raw sequencing data are publicly available 
 
 | Accession | Database | Data Type |
 | ------------- | ------------- | ---------- |
-|  [PRJNA728145](https://www.ncbi.nlm.nih.gov/bioproject/487080)  | BioProject | Project Information |
+| [PRJNA728145](https://www.ncbi.nlm.nih.gov/bioproject/487080) | BioProject | Project information |
 | [SAMN09873042](https://www.ncbi.nlm.nih.gov/biosample/SAMN09873042) | BioSample | Sample metadata |
-| [SRR7973879](https://www.ncbi.nlm.nih.gov/sra/SRR7973879) | Sequence Read Archive (SRA) | Short Insert, Paired-End Library  |
-| [SRR7973880](https://www.ncbi.nlm.nih.gov/sra/SRR7973880) | Sequence Read Archive (SRA) | Long-insert, Mate-pair library (5-7 kb insert size)  |
-| [SRR7973881](https://www.ncbi.nlm.nih.gov/sra/SRR7973881) | Sequence Read Archive (SRA) | Long-insert, Mate-pair library (10-12 kb insert size)  |
+| [SRR7973879](https://www.ncbi.nlm.nih.gov/sra/SRR7973879) | Sequence Read Archive (SRA) | Short insert, paired-end Library  |
+| [SRR7973880](https://www.ncbi.nlm.nih.gov/sra/SRR7973880) | Sequence Read Archive (SRA) | Long-insert, mate-pair library (5-7 kb insert size)  |
+| [SRR7973881](https://www.ncbi.nlm.nih.gov/sra/SRR7973881) | Sequence Read Archive (SRA) | Long-insert, mate-pair library (10-12 kb insert size)  |
 
 ***
-___This GitHub repository contains a summary of the various code, software, and data analysis pipelines used for the aforementioned study of the American shad. The contents represented here are only to be used as an example and not intended to be comeprehensive. The authors make no representation about the suitability or accuracy of this code, software, or data for any purpose, and make no warranties, either expressed or implied, for a particular purpose or that the use of this software or data will not infringe any third party patents, copyrights, trademarks, or other rights. The code, software and data are provided "as is". All content is hereby registered under the GNU General Public License v3.0, see [LICENSE](./LICENSE). Any publication that significantly relies upon the use of the content generated herein shall appropriately cite:___
+___This GitHub repository contains a summary of the various code, software, and data analysis pipelines used for the aforementioned study of the American shad. The contents represented here are only to be used as an example and not intended to be comeprehensive. The authors make no representation about the suitability or accuracy of this code, software, or data for any purpose, and make no warranties, either expressed or implied, for a particular purpose or that the use of this software or data will not infringe any third party patents, copyrights, trademarks, or other rights. The code, software and data are provided "as is". All content is hereby registered under the GNU General Public License v3.0. Any publication that significantly relies upon the use of the content generated herein shall appropriately cite:___
 
-<p align="center">Fackler et al. (in prep.) The influence of genes on the migratory timing of great reed warblers (<i>Acrocephalus arundinaceus</i>). TBD</p>
+<p align="center">Adams-Herrmann et al. (in prep.) Analyses of variant data across the whole genome of the American Shad, <i>Alosa sapidissima</i>. TBD</p>
 
 ***
 
 **Table of Contents**
 
-Data Accession and Cleaning: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Data%20Accession%20and%20Cleaning.md
-Quality Control: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Quality%20Control.md
-Alignment and Processing: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Alignment%20and%20Processing.md
-R Analyses: https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Rscripts.md
+- [Data Accession and Cleaning](./Data%20Accession%20and%20Cleaning.md)
+- [Quality Control](./Quality%20Control.md)
+- [Alignment and Processing](./Alignment%20and%20Processing.md)
+- [R Analyses](./Rscripts.md)
 
 **Software and Programs Used**
 
