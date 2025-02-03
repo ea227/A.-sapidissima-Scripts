@@ -1,3 +1,5 @@
+**Alignment**
+
 Quality controlled fastq files were  aligned to the reference using bwa mem:
 
 ```
@@ -40,6 +42,8 @@ samtools merge \
         Path$(SRR)   \     
         Path${SRR}
 ```
+**Processing**
+
 The merged alignment was then processed:
 
 ```
