@@ -12,6 +12,7 @@ The reference genome was sequenced and assembled at the Vertebrate Genomes Lab a
 Reid Hyle collected a sample for Nina Overgaard Therkildsen from the St. Johns River, Florida, USA for genome assembly. 
 
 **Data Accession** 
+
 The short insert library and both mate pair libaries were accessed from NCBI with SRA toolkit v3.1.1:
 ```
 prefetch ${SRR}
@@ -23,6 +24,7 @@ bwa index ${SRR}
 ```
 
 **Data Cleaning**
+
 Short read libraries were converted to fastq format using fasterqdump from SRA tools:
 ```
 fasterqdump {$SRR} --split files
