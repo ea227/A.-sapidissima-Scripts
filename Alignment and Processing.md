@@ -1,4 +1,4 @@
-**Alignment**
+## **Alignment**
 
 Quality controlled fastq files were  aligned to the reference using bwa mem:
 
