@@ -42,7 +42,7 @@ samtools merge \
         Path$(SRR)   \     
         Path${SRR}
 ```
-**Processing**
+## **Processing**
 
 The merged alignment was then processed:
 
