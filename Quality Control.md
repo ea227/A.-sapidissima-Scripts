@@ -1,4 +1,4 @@
-**Quality Control**
+## **Quality Control**
 
 Cleaned sequence data for each library was quality controlled and preprocessed using fastp v0.20.0:
 ```
