@@ -1,5 +1,5 @@
 
-##**Data Accession** 
+## **Data Accession** 
 
 The short insert library and both mate pair libaries were accessed from NCBI with SRA toolkit v3.1.1:
 ```
@@ -11,7 +11,7 @@ The genome was accessed and indexed using bwa v0.7.18:
 bwa index ${SRR}
 ```
 
-##**Data Cleaning**
+## **Data Cleaning**
 
 Short read libraries were converted to fastq format using fasterqdump from SRA tools:
 ```
