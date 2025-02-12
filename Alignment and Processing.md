@@ -94,7 +94,7 @@ java -jar /home/rfitak/PROGRAMS/snpEff/snpEff.jar ann \
         bgzip -c > shad.filtered.vann.vcf.gzip
 ```
 
-Variant information was accessed for 20000 bp windows using vcftools v0.1.17, and output as a .tsv file: #prob cut this
+Variant information was accessed for 20000 bp windows using vcftools v0.1.17, and output as a .tsv file: 
 ```
 vcftools --gzvcf shad.vcf.gz --SNPDensity 20000 --out filename
 ```
