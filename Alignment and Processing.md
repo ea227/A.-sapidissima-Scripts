@@ -85,8 +85,16 @@ bcftools stats shad.vcf.gz > shad.SNPs.stats
 bcftools view -f 'PASS' -O v shad.vcf.gz | bgzip -c > shad.filtered.vcf.gz 
 bcftools stats -f "PASS" shad.filtered.vcf.gz > shad.filtered.SNPs.stats
 ```
+Variant information was done with SnpEff:
+```
+java -jar /home/rfitak/PROGRAMS/snpEff/snpEff.jar ann \
+        -c /home/rfitak/PROGRAMS/snpEff/snpEff.config \
+        -v aloSap \
+        shad.filtered.vcf.gz | \
+        bgzip -c > shad.filtered.vann.vcf.gzip
+```
 
-Variant information was accessed for 20000 bp windows using vcftools v0.1.17, and output as a .tsv file:
+Variant information was accessed for 20000 bp windows using vcftools v0.1.17, and output as a .tsv file: #prob cut this
 ```
 vcftools --gzvcf shad.vcf.gz --SNPDensity 20000 --out filename
 ```
