@@ -1,4 +1,4 @@
-**R code for data anylses**
+**R code for data anylses** ##update w Tara's code 
 
 
 snp variants from samtools (may not include code for simple plot:
