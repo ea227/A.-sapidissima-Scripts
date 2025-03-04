@@ -1,6 +1,6 @@
 ## **Quality Control**
 
-Cleaned sequence data for each library was quality controlled and preprocessed using fastp v0.20.0:
+Cleaned sequence data for each library was quality controlled and preprocessed using fastp v0.20.0. Output html files are also included below:
 ```
 fastp \ #Quality control and preprocessing of raw sequencing data  
     --in1=${r1} \ 
@@ -34,7 +34,7 @@ fastp parameters:
 
 --stdout:write to standard out for piping
 
---adapter_fasta file:a file of known Illumina adapters to trim
+--adapter_fasta file: a file of known Illumina adapters to trim
 
 --cut_front: enable a 5' sliding window trimmer, like trimmomatic
 
@@ -71,3 +71,7 @@ fastp parameters:
 --report_title="$out" :: output report tile
 
 --thread=${threads} :: number of cpus to use
+
+
+
+
