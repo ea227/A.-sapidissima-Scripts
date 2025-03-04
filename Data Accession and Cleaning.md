@@ -15,7 +15,7 @@ bwa index ${SRR}
 
 Short read libraries were converted to fastq format using fasterqdump from SRA tools:
 ```
-fasterqdump {$SRR} --split files
+fasterqdump ${SRR} --split files
 ```
 Mate pair libraries were converted to fastq format using fastq-dump from SRA tools and then processed with NxTrim v0.4.3:
 ```
