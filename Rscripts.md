@@ -2,6 +2,8 @@
 
 R script for Variant Density Plot:
 ```
+library(tidyverse)
+
 snpdens <- read_tsv("snpdens.tsv")
 str(snpdens)
 unique(snpdens$CHROM)
