@@ -4,3 +4,4 @@ The following plot shows variant density visualized in windows of 20000 bp, sepa
 
 
 
+[variantdensityplot.pdf](https://github.com/user-attachments/files/19488656/variantdensityplot.pdf)
