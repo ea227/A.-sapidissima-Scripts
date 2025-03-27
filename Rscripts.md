@@ -1,64 +1,6 @@
 **R code for data anylses** ##update w Tara's code 
 
-
-snp variants from samtools (may not include code for simple plot:
-```
-snpsxscaf <- read_xlsx("samtoolsdata.xlsx")
-View(snpsxscaf)
-# rename
-snpschromo <- snpsxscaf %>%
-  mutate(Chromosome = case_when(
-    Chromosome == "NC_014690.1" ~ "MT",
-    Chromosome == "NC_055957.1" ~ "1",
-    Chromosome == "NC_055958.1" ~ "2",
-    Chromosome == "NC_055959.1" ~ "3",
-    Chromosome == "NC_055960.1" ~ "4",
-    Chromosome == "NC_055961.1" ~ "5",
-    Chromosome == "NC_055962.1" ~ "6",
-    Chromosome == "NC_055963.1" ~ "7",
-    Chromosome == "NC_055964.1" ~ "8",
-    Chromosome == "NC_055965.1" ~ "9",
-    Chromosome == "NC_055966.1" ~ "10",
-    Chromosome == "NC_055967.1" ~ "11",
-    Chromosome == "NC_055968.1" ~ "12",
-    Chromosome == "NC_055969.1" ~ "13",
-    Chromosome == "NC_055970.1" ~ "14",
-    Chromosome == "NC_055971.1" ~ "15",
-    Chromosome == "NC_055972.1" ~ "16",
-    Chromosome == "NC_055973.1" ~ "17",
-    Chromosome == "NC_055974.1" ~ "18",
-    Chromosome == "NC_055975.1" ~ "19",
-    Chromosome == "NC_055976.1" ~ "20",
-    Chromosome == "NC_055977.1" ~ "21",
-    Chromosome == "NC_055978.1" ~ "22",
-    Chromosome == "NC_055979.1" ~ "23",
-    Chromosome == "NC_055980.1" ~ "24",
-    TRUE ~ Chromosome 
-  ))
-View(snpschromo)
-snpschromo$Chromosome <-factor(snpschromo$Chromosome, 
-          levels = as.character(sort(as.numeric
-          (unique(snpschromo$Chromosome)
-          ))))
-
-str(snpschromo)
-#this looks good
-
- 
-ggplot(snpschromo, aes(x = Chromosome, y = Variants)) +  
-  geom_bar(stat = "identity", fill = "navy", color = "black") +  # Add black outline 
-  theme_classic() + 
-  scale_x_discrete(limits = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "MT")) + 
-  labs(title = "SNP Density", x = "Chromosome", y = "Variants") + 
-  theme( 
-    plot.title = element_text(hjust = 0.5, vjust = -3, size = 26),  # Lower title position and increase font size 
-    axis.title.x = element_text(size = 20),  # Increase x-axis title font size 
-    axis.title.y = element_text(size = 20),  # Increase y-axis title font size 
-    axis.text.x = element_text(size = 15),   # Increase x-axis text font size 
-    axis.text.y = element_text(size = 15)    # Increase y-axis text font size 
-  ) 
-```
-SNP density from .tsv output:
+R script for Variant Density Plot:
 ```
 snpdens <- read_tsv("snpdens.tsv")
 str(snpdens)
@@ -109,42 +51,7 @@ snpplot <- ggplot(snpdenchr, aes(x = BIN_START, y = `VARIANTS/KB`, color = CHROM
 
 print(snpplot)
 ```
-Highest and lowest densities (may not include):
-```
-#Calculate mean from SNP density column, take take lowest 2.5 and highest 97.5 % 
 
-rowMeans(snpdenchr)
-str(snpdenchr)
-meansnps<- mean(snpdenchr$SNP_COUNT, na.rm = TRUE)
-print(meansnps) #81.92581 
-outliers <- quantile(snpdenchr$SNP_COUNT, probs = c(0.025, 0.975))
-print(outliers) #2.5% 6, 97.5% 162
-top_97_5 <- snpdenchr[snpdenchr$SNP_COUNT > outliers[2], ]
-top <- ggplot(top_97_5, aes(x = BIN_START, y = `VARIANTS/KB`, color = CHROM)) +
-         geom_col() +
-         scale_color_viridis_d(name = "CHROM") + 
-         labs(
-           x = "Position", 
-           y = "Variant Density",
-           title = "Top 97.5%") +
-         theme_bw () +
-         facet_wrap(~CHROM, scales = "free_x")
-
-bot_2.5 <- snpdenchr[snpdenchr$SNP_COUNT < outliers[1], ]
-bot <- ggplot(bot_2.5, aes(x = BIN_START, y = `VARIANTS/KB`, color = CHROM)) +
-  geom_col() +
-  scale_color_viridis_d(name = "CHROM") + 
-  labs(
-    x = "Position", 
-    y = "Variant Density",
-    title = "Bottom 2.5%") +
-  theme_bw () +
-  facet_wrap(~CHROM, scales = "free_x")
-
-#export top 97 and bottom 2.5 as csv files
-write.csv(top_97_5, "top_97_5.csv", row.names = FALSE)
-write.csv(bot_2.5, "bot_2_5.csv", row.names = FALSE)
-```
 #Tara insert data 
 
 
