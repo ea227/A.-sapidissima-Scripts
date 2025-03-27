@@ -1,9 +1,9 @@
- **Variant Density Across the Genome**
+## **Variant Density Across the Genome**
 
 The following plot shows variant density visualized in windows of 20000 bp, separated by chromosome number: 
 [variantdensityplot.pdf](https://github.com/user-attachments/files/19489152/variantdensityplot.pdf)
 
-**fastp Reports**
+## **fastp Reports**
 
 Short insert library:
 [srr79.pdf](https://github.com/user-attachments/files/19489292/srr79.pdf)
