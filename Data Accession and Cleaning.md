@@ -1,5 +1,5 @@
 
-## ** 1. Data Accession** 
+## **Data Accession** 
 
 The short insert library and both mate pair libaries were accessed from NCBI with SRA toolkit v3.1.1. {SRR} was substituted for the SRA accession numbers for each library:
 ```
@@ -27,7 +27,10 @@ fastq-dump --gzip --split-files ${SRR} #Convert mate pair libraries to fastq
         -l 50 \ 
         --stdout
 ```
-
+NxTrim parameters:
+-a: aggressive adaptor search
+-l: minimum length 
+--stdout: pipe directly to aligner 
 
 
 
