@@ -28,8 +28,11 @@ fastq-dump --gzip --split-files ${SRR} #Convert mate pair libraries to fastq
         --stdout
 ```
 NxTrim parameters:
+
 -a: aggressive adaptor search
+
 -l: minimum length 
+
 --stdout: pipe directly to aligner 
 
 
