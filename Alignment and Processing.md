@@ -11,6 +11,14 @@ bwa mem \ #Aligning libraries to reference genome
    $r1 \ 
    $r2 | \ 
 ```
+BWA MEM parameters:
+
+-M: Mark shorter split hits as secondary
+
+-R: Read group ID line (i.e. sample name)
+
+-t: number of threads
+
 samtools v 1.10.2 was used to sort BAM files numerically, fixmates to add mate score tag and markdup to identify  duplicates:
 ```
 samtools sort \ 
