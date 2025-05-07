@@ -1,6 +1,6 @@
 ## **Alignment**
 
-Quality controlled fastq files were  aligned to the reference using bwa mem:
+Quality controlled fastq files were  aligned to the reference using the Burrows-Wheeler Aligner BWA MEM:
 
 ```
 bwa mem \ #Aligning libraries to reference genome 
