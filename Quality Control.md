@@ -1,6 +1,6 @@
 ## **Quality Control**
 
-Cleaned sequence data for each library was quality controlled and preprocessed using fastp v0.20.0. Output html files are also included below:
+Cleaned sequence data for each library was quality controlled and preprocessed using fastp v0.20.0. Output html files are also included as PDFs in the Supplemental Data section. The following parameters were used:
 ```
 fastp \ #Quality control and preprocessing of raw sequencing data  
     --in1=${r1} \ 
