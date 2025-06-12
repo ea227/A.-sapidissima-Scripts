@@ -12,7 +12,7 @@
 
 The bioinformatic analysis of the raw sequencing reads is described here, including links and citations to programs and software versions, and the scripts used. All analyses were run on the coombs computer cluster at the University of Central Florida (UCF). Coombs is a Linux server currently running Ubuntu 20.04.6 LTS.
 
-All sequence data referenced herein are attributed to an award from the The Sequencing and Genomic Technologies Shared Resource at the Duke Center for Genomic and Computational Biology (Duke University). Sequencing was done by (R Fitak,######). Samples and assistance were provided by Stephen Jackson and Kevin Dockendorf at the Edenton National Fish Hatchery.
+All sequence data referenced herein are attributed to an award from the The Sequencing and Genomic Technologies Shared Resource at the Duke Center for Genomic and Computational Biology (Duke University). Sequencing was done by (R Fitak). Samples and assistance were provided by Stephen Jackson and Kevin Dockendorf at the Edenton National Fish Hatchery.
 
 The reference genome was sequenced and assembled at the Vertebrate Genomes Lab at Rockefeller University for the Vertebrate Genomes Project (VGP) and coordinated by Olivier Fedrigo and Erich D. Jarvis. Reid Hyle collected a sample for Nina Overgaard Therkildsen from the St. Johns River, Florida, USA for genome assembly.
 
@@ -20,11 +20,12 @@ All project, sample information, and raw sequencing data are publicly available 
 
 | Accession | Database | Data Type |
 | ------------- | ------------- | ---------- |
-| [PRJNA728145](https://www.ncbi.nlm.nih.gov/bioproject/487080) | BioProject | Project information |
+| [PRJNA487080](https://www.ncbi.nlm.nih.gov/bioproject/487080) | BioProject | Project information |
 | [SAMN09873042](https://www.ncbi.nlm.nih.gov/biosample/SAMN09873042) | BioSample | Sample metadata |
 | [SRR7973879](https://www.ncbi.nlm.nih.gov/sra/SRR7973879) | Sequence Read Archive (SRA) | Short insert, paired-end Library  |
 | [SRR7973880](https://www.ncbi.nlm.nih.gov/sra/SRR7973880) | Sequence Read Archive (SRA) | Long-insert, mate-pair library (5-7 kb insert size)  |
 | [SRR7973881](https://www.ncbi.nlm.nih.gov/sra/SRR7973881) | Sequence Read Archive (SRA) | Long-insert, mate-pair library (10-12 kb insert size)  |
+| [PRJEB90297](https://www.ebi.ac.uk/eva/?eva-study=PRJEB90297) | European Variation Archive (EVA) | Variant data (i.e. VCF)  |
 
 ***
 ___This GitHub repository contains a summary of the various code, software, and data analysis pipelines used for the aforementioned study of the American shad. The contents represented here are only to be used as an example and not intended to be comeprehensive. The authors make no representation about the suitability or accuracy of this code, software, or data for any purpose, and make no warranties, either expressed or implied, for a particular purpose or that the use of this software or data will not infringe any third party patents, copyrights, trademarks, or other rights. The code, software and data are provided "as is". All content is hereby registered under the GNU General Public License v3.0. Any publication that significantly relies upon the use of the content generated herein shall appropriately cite:___
@@ -52,6 +53,7 @@ ___This GitHub repository contains a summary of the various code, software, and 
 | vcftools | 0.1.17 | Danecek, P., Auton, A., Abecasis, G., Albers, C.A., Banks, E., DePristo, M.A., Handsaker, R., Lunter, G., Marth, G., Sherry, S.T., McVean, G., Durbin, R., and 1000 Genomes Project Analysis Group, (2011). The Variant Call Format and VCFtools. Bioinformatics, 27(15), 2156-2158. https://doi.org/10.1093/bioinformatics/btr330 |
 | SnpEff | 5.2f | Cingolani P, Platts A, Wang le L, Coon M, Nguyen T, Wang L, Land SJ, Lu X, Ruden DM. (2012). Using Drosophila melanogaster as a model for genotoxic chemical mutational studies with a new program, SnpSift, Fly, Volume 6, Number 2, Pages 80-92|
 | R | 4.4.1 |  R Core Team (2024). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.|
+|eva-sub-cli | 0.4.7 | https://github.com/EBIvariation/eva-sub-cli |
 | tidyverse | 2.0.0 | Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686.|
 |  ggplot 2 | 3.5.1 | H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. |
 
