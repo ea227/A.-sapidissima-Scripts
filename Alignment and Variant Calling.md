@@ -135,17 +135,23 @@ The summary of SNP-calling statistics can be found here:
 - After Filtering: [shad.filtered.SNPs.stats](./data/shad.filtered.SNPs.stats)
 
 ### Step 4: Annotate SNPs
-Variant information was done with SnpEff:
-```
-java -jar /home/rfitak/PROGRAMS/snpEff/snpEff.jar ann \
-        -c /home/rfitak/PROGRAMS/snpEff/snpEff.config \
-        -v aloSap \
-        shad.filtered.vcf.gz | \
-        bgzip -c > shad.filtered.vann.vcf.gzip
-```
+Variant information was done with `SnpEff v5.2e`.
 
-Variant information was accessed for 20000 bp windows using vcftools v0.1.17, and output as a .tsv file: 
-```
-vcftools --gzvcf shad.vcf.gz --SNPDensity 20000 --out filename
-```
+```bash
+# Build database
+snpEff \
+      build \
+      -c snpEff.config \
+      -gtf22 \
+      -v -noCheckCds \
+      -noCheckProtein \
+      -nodownload \
+      aloSap
 
+# Annotate vcf
+java -jar snpEff.jar ann \
+	-c snpEff.config \
+	aloSap \
+	shad.filtered.vcf.gz | \
+	bgzip -c > shad.filtered.ann.vcf.gz
+```
