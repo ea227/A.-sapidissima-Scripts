@@ -89,44 +89,62 @@ samtools stats -@ ${threads} shad.merged.bam > shad.merged.bamstats
 The summary statistics of the final, merged dataset of mapped reads can be found here:
 - [shad.merged](./data/shad.merged.bamstats)
 
-# XXXXXXXXXXXXXXXXXXXXX
+### Call SNPs
+Variants were called with `bcftools v1.10.2 mpileup`, filtered, and output as a gzipped VCF.
+```bash
+# Call SNPs
+threads=48 # CPU threads to use
+bcftools \
+        mpileup \
+        -C 50 \
+        -q 20 \
+        -Q 20 \
+        --threads ${threads} \
+        -Ou \
+        --ignore-RG \
+        --per-sample-mF \
+        --annotate FORMAT/AD,FORMAT/ADF,FORMAT/ADR,FORMAT/DP,FORMAT/SP,INFO/AD,INFO/ADF,INFO/ADR \
+        -f Asap.fa \
+        shad.merged.bam | \
+        bcftools \
+           call \
+           --threads ${threads} \
+           --annotate FORMAT/GQ,FORMAT/GP,INFO/PV4 \
+           -mv -Ou | \
+        bcftools \
+           filter \
+           --threads ${threads} \
+           -sFAIL -e'QUAL < 30 || INFO/MQ <= 30 || INFO/MQBZ < -9 || INFO/RPBZ < -5 || INFO/RPBZ > 5 || INFO/BQBZ < -5 || INFO/DP4[3]+INFO/DP4[4] <= 2' \
+           -g10 \
+           -G10 \
+           -Ov | \
+        bgzip -c > shad.vcf.gz
 
-```
-Variants were called with bcftools v1.10.2 mpileup, filtered, and output as a gzipped VCF:
-```
-bcftools \  
-        mpileup \ 
-        -C 50 \ 
-        -q 20 \ 
-        -Q 20 \ 
-        --threads 24 \ 
-        -Ou \ 
-        --ignore-RG \ 
-        --per-sample-mF \ 
-  --annotate FORMAT/AD,FORMAT/ADF,FORMAT/ADR,FORMAT/DP,FORMAT/SP,INFO/AD,INFO/ADF,INFO/ADR \ 
-        -f /${path} \ 
-        shad.merged.bam | \ 
-        bcftools \ 
-           call \ 
-           --threads 24 \ 
-           --annotate FORMAT/GQ,FORMAT/GP,INFO/PV4 \ 
-           -mv -Ou | \ 
-        bcftools \ 
-           filter \ 
-           --threads 24 \ 
-           -sFAIL -e'QUAL < 30 || INFO/MQ <= 30 || INFO/MQBZ < -9 || INFO/RPBZ < -5 || INFO/RPBZ > 5 || INFO/BQBZ < -5 || INFO/DP4[3]+INFO/DP4[4] <= 2' \ 
-           -g10 \ 
-           -G10 \ 
-           -Ov | \ 
-        bgzip -c > shad.vcf.gz 
-```
-bcftools was then used to index the VCF, generate stats, and filter the VCF further:
-```
-bcftools index --threads 24 shad.vcf.gz 
-bcftools stats shad.vcf.gz > shad.SNPs.stats 
-bcftools view -f 'PASS' -O v shad.vcf.gz | bgzip -c > shad.filtered.vcf.gz 
+# Index the VCF file
+bcftools index --threads ${threads} shad.vcf.gz
+
+# Stats
+bcftools stats shad.vcf.gz > shad.SNPs.stats
+
+# Filter
+bcftools view -f 'PASS' -O v shad.vcf.gz | bgzip -c > shad.filtered.vcf.gz
 bcftools stats -f "PASS" shad.filtered.vcf.gz > shad.filtered.SNPs.stats
 ```
+The summary of SNP-calling statistics can be found here:
+- Before Filtering: [shad.SNPs.stats](./data/shad.SNPs.stats]
+- After Filtering: [shad.filtered.SNPs.stats](./data/shad.filtered.SNPs.stats]
+
+
+
+
+
+
+
+
+
+
+
+
 Variant information was done with SnpEff:
 ```
 java -jar /home/rfitak/PROGRAMS/snpEff/snpEff.jar ann \
