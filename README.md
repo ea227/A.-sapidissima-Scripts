@@ -37,7 +37,7 @@ ___This GitHub repository contains a summary of the various code, software, and 
 
 **Table of Contents**
 
-- [Data Accession and Cleaning](./Data%20Accession%20and%20Cleaning.md)
+- [Data Accession and Preparation](./Data%20Accession%20and%20Preparation.md)
 - [Quality Control](./Quality%20Control.md)
 - [Alignment and Processing](./Alignment%20and%20Processing.md)
 - [R Analyses](./Rscripts.md)
