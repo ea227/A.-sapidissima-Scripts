@@ -37,11 +37,11 @@ ___This GitHub repository contains a summary of the various code, software, and 
 
 **Table of Contents**
 
-- 1. [Data Accession and Preparation](./Data%20Accession%20and%20Preparation.md)
-- 2. [Quality Control](./Quality%20Control.md)
-- 3. [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling.md)
-- 4. [EVA Submission](./EVA%20Submission.md)
-- 5. [R Analyses](./Rscripts.md)
+1. [Data Accession and Preparation](./Data%20Accession%20and%20Preparation.md)
+2. [Quality Control](./Quality%20Control.md)
+3. [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling.md)
+4. [EVA Submission](./EVA%20Submission.md)
+5. [R Analyses](./Rscripts.md)
 
 **Software and Programs Used**
 
