@@ -39,7 +39,7 @@ ___This GitHub repository contains a summary of the various code, software, and 
 
 - [Data Accession and Preparation](./Data%20Accession%20and%20Preparation.md)
 - [Quality Control](./Quality%20Control.md)
-- [Alignment and Processing](./Alignment%20and%20Processing.md)
+- [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling.md)
 - [R Analyses](./Rscripts.md)
 
 **Software and Programs Used**
