@@ -1,5 +1,6 @@
-## **Data Accession** 
-The short insert library and both mate-pair libaries were accessed from NCBI with SRA toolkit v3.1.1.
+# **Data Accession and Preparation** 
+### Step 1: obtain raw sequencing reads
+The paired-end (short insert) library and both mate-pair libaries were accessed from NCBI with SRA toolkit v3.1.1.
 For the paired-end reads, `SRR=SRR7973879`, and for the mate-pair reads `SRR=SRR7973880` and `SRR=SRR7973881`.
 
 ```bash
@@ -27,31 +28,12 @@ fasterq-dump \
         ./${SRR}.sra
 ```
 
+### Step 2: Convert mate-pair reads to paired-end format
+Mate pair libraries were processed with [NxTrim v0.4.3](https://github.com/sequencing/NxTrim). NxTrim removes the Nextera Mate Pair junction adapters and categorise reads according to the orientation implied by the adapter location. This allows the resulting reads to be formatted and oriented similar to paired-end reads for mapping.
 
-
-
-
-
-
-
-{SRR} was substituted for the SRA accession numbers for each library:
 ```
-prefetch ${SRR}
-```
-
-The genome was accessed and indexed using bwa v0.7.18:
-```
-bwa index ${SRR}
-```
-## **Data Cleaning**
-
-Short read libraries were converted to fastq format using fasterqdump from SRA tools:
-```
-fasterqdump ${SRR} --split files
-```
-Mate pair libraries were converted to fastq format using fastq-dump from SRA tools and then processed with NxTrim v0.4.3:
-```
-fastq-dump --gzip --split-files ${SRR} #Convert mate pair libraries to fastq 
+# Process with NxTrim (one one example shown)
+SRR=SRR7973880
  nxtrim \  #processing for mate-pair libraries
         -1 ${SRR}_1.fastq.gz \ 
         -2 ${SRR}_2.fastq.gz \ 
@@ -68,3 +50,13 @@ NxTrim parameters:
 --stdout: pipe directly to aligner 
 
 
+### Step 2: Download and index the reference genome
+The American shad reference genome (NCBI accession [GCF_018492685.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_018492685.1/)) was downloaded and indexed using `bwa v0.7.18`:
+
+```
+# Download and index reference genome
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/018/492/685/GCF_018492685.1_fAloSap1.pri/GCF_018492685.1_fAloSap1.pri_genomic.fna.gz
+gunzip GCF_018492685.1_fAloSap1.pri_genomic.fna.gz
+mv GCF_018492685.1_fAloSap1.pri_genomic.fna Asap.fa
+bwa index Asap.fa
+```
