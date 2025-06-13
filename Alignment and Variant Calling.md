@@ -1,5 +1,99 @@
 ## **Alignment and Variant Calling**
 
+All cleaned, paired-end reads were aligned to the reference genome using bwa mem.
+
+_mapping with bwa mem_
+```bash
+# Setup variables; repeated for each SRR library
+SRR=SRR7973879
+threads=48 # CPU threads to use
+rg="@RG\tID:${SRR}\tSM:${SRR}\tPL:illumina\tLB:run1"
+
+# Run bwa mem
+bwa mem \
+      -M \
+      -p \
+      -R "$rg" \
+      -t ${threads} \
+      Asap.fa \
+      ${SRR}_1.... \
+      ${SRR}_2.... | the output was piped into samtools
+```
+
+- _Parameters Explained:_
+  - ***-M*** :: mark shorter split hits as secondary
+  - ***-p*** :: smart pairing (ignoring in2.fq), in other words, data input are interleaved fastq
+  - ***-t*** :: number of cpus to use
+
+_initial processing with samtools_
+```bash
+# Process with samtools
+   # ${threads} = # CPU threads to use
+   # ${out} = output file basename
+samtools sort \
+   -T ${out}.tmp \
+   -n \
+   -@ ${threads} \
+   - | \
+   samtools fixmate \
+      -@ ${threads} \
+      -m \
+      - - | \
+      samtools sort \
+         -T ${out}.tmp2 \
+         -O bam \
+         -@ ${threads} \
+         - | \
+         samtools markdup \
+             -T ${out}.tmp3 \
+             -O bam \
+             -@ ${threads} \
+             - ${out}.sorted.bam
+```
+
+- _Parameters Explained:_
+  - ***sort -n*** :: sort BAM file numerically
+  - ***fixmate -m*** :: fixmates and add mate score tag
+  - ***markdup*** :: mark PCR/optical duplicates for later removal.
+
+_cleaning the BAM file_
+```bash
+# Clean up the bam file
+samtools view \
+      -b \
+      -h \
+      -q 20 \
+      -f 0x2 \
+      -F 0x4 \
+      -F 0x8 \
+      -F 0x400 \
+      -@ ${threads} \
+      -o ${out}.clean.sorted.bam \
+      ${out}.sorted.bam
+```
+
+- _Parameters Explained:_
+  - ***-b*** :: output BAM format
+  - ***-h*** :: Include header in SAM output
+  - ***-q*** :: remove reads with mapping quality < 20
+  - ***-f 0x2*** :: keep reads mapped in proper pair
+  - ***-F 0x4*** :: remove unmapped reads
+  - ***-F 0x8*** :: remove read when its mate is unmapped
+  - ***-F 0x400*** :: remove read when mate is mapped to the reverse strand, or not the primary alignment.
+
+_post-process BAM file_
+```bash
+# Process BAM and get stats
+   # ${threads} = # CPU threads to use
+   # ${out} = output file basename
+samtools index -@ ${threads} ${out}.clean.sorted.bam
+samtools stats -@ ${threads} ${out}.clean.sorted.bam > ${out}.bamstats
+```
+
+
+
+
+
 Quality controlled fastq files were  aligned to the reference using the Burrows-Wheeler Aligner BWA MEM:
 
 ```
