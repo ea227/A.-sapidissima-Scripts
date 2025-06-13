@@ -62,6 +62,11 @@ samtools index -@ ${threads} ${SRR}.sorted.bam
 samtools stats -@ ${threads} ${SRR}.sorted.bam > ${SRR}.bamstats
 ```
 
+The various summary statistics of the mapping for each set of reads can be found here:
+- [SRR7973879](./data/SRR7973879.bamstats)
+- [SRR7973880](./data/SRR7973880.bamstats)
+- [SRR7973881](./data/SRR7973881.bamstats)
+
 ### Step 2: Merge BAM files
 
 The resulting three BAM files were merged with `samtools merge` into a single BAM file:
@@ -81,7 +86,8 @@ samtools merge \
 samtools index shad.merged.bam
 samtools stats -@ ${threads} shad.merged.bam > shad.merged.bamstats
 ```
-
+The summary statistics of the final, merged dataset of mapped reads can be found here:
+- [shad.merged](./data/shad.merged.bamstats)
 
 # XXXXXXXXXXXXXXXXXXXXX
 
