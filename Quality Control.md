@@ -62,7 +62,7 @@ The output summary files from the read cleaning using _fastp_ can be found here 
 - html: [SRR7973881.html](./data/SRR7973881.html) or as PDF [SRR7973881.pdf](./data/SRR7973881.pdf)
 
 ### Step 2: Process mate-pair reads
-Mate pair libraries were processed with [NxTrim v0.4.3](https://github.com/sequencing/NxTrim). NxTrim removes the Nextera Mate Pair junction adapters and categorise reads according to the orientation implied by the adapter location. This allows the resulting reads to be formatted and oriented similar to paired-end reads for mapping. The output reads from _NxTrim_ were quality controlled and processed (including adapter removal) using [*fastp v0.20.0*](https://github.com/OpenGene/fastp) ([Chen et al. 2018](https://doi.org/10.1093/bioinformatics/bty560)) identical to the paired-end reads above.
+Mate pair libraries were processed with [NxTrim v0.4.3](https://github.com/sequencing/NxTrim) ([O'Connell et al. 2015](https://doi.org/10.1093/bioinformatics/btv057)). NxTrim removes the Nextera Mate Pair junction adapters and categorise reads according to the orientation implied by the adapter location. This allows the resulting reads to be formatted and oriented similar to paired-end reads for mapping. The output reads from _NxTrim_ were quality controlled and processed (including adapter removal) using [*fastp v0.20.0*](https://github.com/OpenGene/fastp) ([Chen et al. 2018](https://doi.org/10.1093/bioinformatics/bty560)) identical to the paired-end reads above.
 
 ```bash
 # Process with NxTrim (one one example shown)
