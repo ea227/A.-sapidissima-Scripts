@@ -22,6 +22,7 @@ _Parameters explained:_
 Alternatively, there were occassional download issues using `fasterq-dump`. If so, then read files were first downoaded using `prefetch` in the `.sra` format and then converted to fastq format like this:
 ```bash
 prefetch --max-size 200G -o ${SRR}.sra ${SRR}
+threads=48
 fasterq-dump \
         --progress \
         --threads ${threads} \
