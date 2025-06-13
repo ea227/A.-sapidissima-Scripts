@@ -165,6 +165,10 @@ snpEff \
 java -jar snpEff.jar ann \
 	-c snpEff.config \
 	aloSap \
-	shad.filtered.vcf.gz | \
-	bgzip -c > shad.filtered.ann.vcf.gz
+	Asap001.filtered.noMito.vcf.gz | \
+	bgzip -c > Asap001.filtered.ann.noMito.vcf.gz
 ```
+The results from SnpEff can be found here:
+- HTML format (open in web browser): [snpEff_summary.html](./data/snpEff_summary.html)
+- PDF format: [snpEff_summary.pdf](./data/snpEff_summary.pdf)
+- variant counts by gene (tab-delimited table): [snpEff_genes.txt](./data/snpEff_genes.txt)
