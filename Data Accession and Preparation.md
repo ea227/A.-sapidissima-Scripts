@@ -3,7 +3,7 @@
 The paired-end (short insert) library and both mate-pair libaries were accessed from NCBI with SRA toolkit v3.1.1.
 For the paired-end reads, `SRR=SRR7973879`, and for the mate-pair reads `SRR=SRR7973880` and `SRR=SRR7973881`.
 
-```bash
+```BASH
 # Download reads (paired-end reads example shown)
 threads=48
 SRR=SRR7973879
