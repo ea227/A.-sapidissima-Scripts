@@ -1,4 +1,4 @@
-## **Alignment**
+## **Alignment and Variant Calling**
 
 Quality controlled fastq files were  aligned to the reference using the Burrows-Wheeler Aligner BWA MEM:
 
