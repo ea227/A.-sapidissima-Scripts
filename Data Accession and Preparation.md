@@ -30,28 +30,6 @@ fasterq-dump \
         ./${SRR}.sra
 ```
 
-### Step 2: Convert mate-pair reads to paired-end format
-Mate pair libraries were processed with [NxTrim v0.4.3](https://github.com/sequencing/NxTrim). NxTrim removes the Nextera Mate Pair junction adapters and categorise reads according to the orientation implied by the adapter location. This allows the resulting reads to be formatted and oriented similar to paired-end reads for mapping.
-
-```bash
-# Process with NxTrim (one one example shown)
-SRR=SRR7973880
- nxtrim \  #processing for mate-pair libraries
-        -1 ${SRR}_1.fastq.gz \ 
-        -2 ${SRR}_2.fastq.gz \ 
-        -a \ 
-        -l 50 \ 
-        --stdout
-```
-NxTrim parameters:
-
---a: aggressive adaptor search
-
---l: minimum length 
-
---stdout: pipe directly to aligner 
-
-
 ### Step 2: Download and index the reference genome
 The American shad reference genome (NCBI accession [GCF_018492685.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_018492685.1/)) was downloaded and indexed using `bwa v0.7.18`:
 
