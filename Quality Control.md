@@ -57,7 +57,7 @@ fastp \
   - ***--thread=${threads}***  :: number of cpus to use
 
 The output summary files from the read cleaning using _fastp_ can be found here (download and open the .html files in a web broser):
-- html: [SRR7973879.html](./data/SRR7973879.html) or as PDF [SRR7973879.html](./data/SRR7973879.pdf)
+- html: [SRR7973879.html](./data/SRR7973879.html) or as PDF [SRR7973879.pdf](./data/SRR7973879.pdf)
 - html: [SRR7973880.html](./data/SRR7973880.html) or as PDF [SRR7973880.pdf](./data/SRR7973880.pdf)
 - html: [SRR7973881.html](./data/SRR7973881.html) or as PDF [SRR7973881.pdf](./data/SRR7973881.pdf)
 
