@@ -62,7 +62,7 @@ samtools index -@ ${threads} ${SRR}.sorted.bam
 samtools stats -@ ${threads} ${SRR}.sorted.bam > ${SRR}.bamstats
 ```
 
-### Step: Merge BAM files
+### Step 2: Merge BAM files
 
 The resulting three BAM files were merged with `samtools merge` into a single BAM file:
 
