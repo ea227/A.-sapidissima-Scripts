@@ -119,20 +119,32 @@ bcftools \
            -G10 \
            -Ov | \
         bgzip -c > shad.vcf.gz
+```
+
+```bash
+# Rename the sample and remove mitochondrial contigs
+bcftools reheader \
+	-s samples \
+	shad.vcf.gz | \
+	bcftools view \
+		--targets ^NC_014690.1 \
+		-O z \
+		-o Asap001.noMito.vcf.gz -
 
 # Index the VCF file
-bcftools index --threads ${threads} shad.vcf.gz
+bcftools index --threads ${threads} Asap001.noMito.vcf.gz
 
 # Stats
-bcftools stats shad.vcf.gz > shad.SNPs.stats
+bcftools stats Asap001.noMito.vcf.gz > Asap001.noMito.stats
 
 # Filter
-bcftools view -f 'PASS' -O v shad.vcf.gz | bgzip -c > shad.filtered.vcf.gz
-bcftools stats -f "PASS" shad.filtered.vcf.gz > shad.filtered.SNPs.stats
+bcftools view -f 'PASS' -O v Asap001.noMito.vcf.gz | bgzip -c > Asap001.filtered.noMito.vcf.gz
+bcftools stats -f "PASS" Asap001.filtered.noMito.vcf.gz > Asap001.filtered.noMito.stats
 ```
+
 The summary of SNP-calling statistics can be found here:
-- Before Filtering: [shad.SNPs.stats](./data/shad.SNPs.stats)
-- After Filtering: [shad.filtered.SNPs.stats](./data/shad.filtered.SNPs.stats)
+- Before Filtering: [Asap001.noMito.stats](./data/Asap001.noMito.stats)
+- After Filtering: [Asap001.filtered.noMito.stats](./data/Asap001.filtered.noMito.stats)
 
 ### Step 4: Annotate SNPs
 Variant information was done with `SnpEff v5.2e`.
