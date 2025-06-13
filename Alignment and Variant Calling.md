@@ -89,7 +89,7 @@ samtools stats -@ ${threads} shad.merged.bam > shad.merged.bamstats
 The summary statistics of the final, merged dataset of mapped reads can be found here:
 - [shad.merged](./data/shad.merged.bamstats)
 
-### Call SNPs
+### Step 3: Call SNPs
 Variants were called with `bcftools v1.10.2 mpileup`, filtered, and output as a gzipped VCF.
 ```bash
 # Call SNPs
@@ -131,20 +131,10 @@ bcftools view -f 'PASS' -O v shad.vcf.gz | bgzip -c > shad.filtered.vcf.gz
 bcftools stats -f "PASS" shad.filtered.vcf.gz > shad.filtered.SNPs.stats
 ```
 The summary of SNP-calling statistics can be found here:
-- Before Filtering: [shad.SNPs.stats](./data/shad.SNPs.stats]
-- After Filtering: [shad.filtered.SNPs.stats](./data/shad.filtered.SNPs.stats]
+- Before Filtering: [shad.SNPs.stats](./data/shad.SNPs.stats)
+- After Filtering: [shad.filtered.SNPs.stats](./data/shad.filtered.SNPs.stats)
 
-
-
-
-
-
-
-
-
-
-
-
+### Step 4: Annotate SNPs
 Variant information was done with SnpEff:
 ```
 java -jar /home/rfitak/PROGRAMS/snpEff/snpEff.jar ann \
