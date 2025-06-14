@@ -124,6 +124,8 @@ bcftools \
 Next, to be compatible later with submission to the European Variation Archive, we had to rename the sample to match that in the BioSample database, Asap-001.  Also, to avoid any downstream issues with the mitochondrial contig, we removed all variants on the mitochondrial sequence [NC_014690.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_014690.1/).
 ```bash
 # Rename the sample and remove mitochondrial contigs
+   # The file "samples":
+   # shad.merged.bam Asap-001
 bcftools reheader \
 	-s samples \
 	shad.vcf.gz | \
