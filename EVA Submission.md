@@ -1,30 +1,9 @@
 # Submitting the variant data to the EVA
 The code below is for submitting the variant data (i.e., vcf file) to the European Variation Archive ([EVA](https://www.ebi.ac.uk/eva/))
 
-## Step 1: Preparing VCF for EVA
-I first had to change the sample name to match exactly between the VCF file and the BioSample info. I used bcftools reheader to do this using the following command:
+I first made sure that the sample name in the VCF file matched the BioSample ID (**_Asap-001_**), and that the mitochondrial contig xxx was removed. The code for this can be found in [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling). Next, I had to remove the following line (was offending to the eva-submit software):
+
 ```bash
-# Rename the samples in the VCF
-bcftools reheader \
-   -s samples \
-   -o Asap001.filtered.ann.vcf.gz \
-   shad.filtered.ann.vcf.gz
-
-# The file "samples":
-shad.merged.bam Asap-001
-```
-
-2. I had to remove the mitochondrial contig:
-```
-# Remove mitochondrial contig NC_014690.1
-bcftools view \
-   --targets ^NC_014690.1 \
-   -O z \
-   -o Asap001.filtered.ann.noMito.vcf.gz \
-   Asap001.filtered.ann.vcf.gz
-```
-3. I then had to remove the following line (was offending to the eva-submit software):
-```
 # Unzip the vcf file
 gunzip Asap001.filtered.ann.noMito.vcf.gz
 
@@ -34,7 +13,9 @@ gunzip Asap001.filtered.ann.noMito.vcf.gz
 # Recompressed the vcf
 bgzip Asap001.filtered.ann.noMito.vcf
 ```
-4. Installed the eva submission software using conda
+
+Next, I installed the [eva v0.4.7](https://github.com/EBIvariation/eva-sub-cli) submission software using conda, validated the VCF, then submitted it to the EVA.
+
 ```
 # Install eva-sub-cli
 conda create \
