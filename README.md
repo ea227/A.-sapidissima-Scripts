@@ -26,7 +26,7 @@ All project, sample information, and raw sequencing data are publicly available 
 | [SRR7973880](https://www.ncbi.nlm.nih.gov/sra/SRR7973880) | Sequence Read Archive (SRA) | Long-insert, mate-pair library (5-7 kb insert size)  |
 | [SRR7973881](https://www.ncbi.nlm.nih.gov/sra/SRR7973881) | Sequence Read Archive (SRA) | Long-insert, mate-pair library (10-12 kb insert size)  |
 | [PRJEB90297](https://www.ebi.ac.uk/eva/?eva-study=PRJEB90297) | European Variation Archive (EVA) | Variant Project |
-| [ERZ26881722](https://www.ebi.ac.uk/eva/?eva-analyses=ERZ26881722) | European Variation Archive (EVA) | Variant data & analysis (i.e. VCF)  |
+| [ERZ26881722](https://www.ebi.ac.uk/ena/browser/view/ERZ26881722) | European Variation Archive (EVA) | Variant data & analysis (i.e. VCF)  |
 
 ***
 ___This GitHub repository contains a summary of the various code, software, and data analysis pipelines used for the aforementioned study of the American shad. The contents represented here are only to be used as an example and not intended to be comeprehensive. The authors make no representation about the suitability or accuracy of this code, software, or data for any purpose, and make no warranties, either expressed or implied, for a particular purpose or that the use of this software or data will not infringe any third party patents, copyrights, trademarks, or other rights. The code, software and data are provided "as is". All content is hereby registered under the GNU General Public License v3.0. Any publication that significantly relies upon the use of the content generated herein shall appropriately cite:___
