@@ -8,9 +8,6 @@ The following plot shows variant density visualized in windows of 20000 bp, sepa
 [variantdensityplot.pdf](https://github.com/user-attachments/files/22197407/variantdensityplot.pdf)
 
 
-#old
-[variantdensityplot.pdf](https://github.com/user-attachments/files/19489152/variantdensityplot.pdf)
-
 ## **fastp Reports**
 
 Short insert library:
