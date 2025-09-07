@@ -2,19 +2,21 @@
 
 R script for Variant Density Plot:
 ```
+#SNP density by rolling window code
+
 library(tidyverse)
+#read in data
+snpdens <- read_tsv("Asap001.tsv.snpden") #tsv from vcftools of 20000 bp windows
+#check 
+str(snpdens) #chromosomes "NC_055957.1" etc, bins look good, SNP counts per bin, variants/kb
+view(snpdens)
+unique(snpdens$CHROM) #nws are unplaced scaffolds
+slice_max(snpdens, order_by = `VARIANTS/KB`) #12.1
+slice_min(snpdens, order_by = `VARIANTS/KB`) #0
 
-snpdens <- read_tsv("snpdens.tsv")
-str(snpdens)
-unique(snpdens$CHROM)
-snpdens$CHROM <- as.factor(snpdens$CHROM)
-any(is.na(snpdens$CHROM))
-snpdens <- as.data.frame(snpdens)
 
-snpdenchr <- snpdens %>%
-  filter(!str_starts(CHROM, "NW")) %>%
-  mutate(CHROM = case_when(
-    CHROM == "NC_014690.1" ~ "MT",
+#make chromosomes numbered and take out unplaced scaffolds
+snpdenchr <- snpdens %>% filter(!str_starts(CHROM, "NW")) %>% mutate(CHROM = case_when(
     CHROM == "NC_055957.1" ~ "01",
     CHROM == "NC_055958.1" ~ "02",
     CHROM == "NC_055959.1" ~ "03",
@@ -39,17 +41,21 @@ snpdenchr <- snpdens %>%
     CHROM == "NC_055978.1" ~ "22",
     CHROM == "NC_055979.1" ~ "23",
     CHROM == "NC_055980.1" ~ "24",
-    TRUE ~ CHROM 
-  )) %>%  filter(CHROM != "MT")
+    TRUE ~ CHROM))
+
+str(snpdenchr) #tibble looks good with the chromosomes numbered now.
+
+#plot across genome in bins, y axis should be variants/kb
 snpplot <- ggplot(snpdenchr, aes(x = BIN_START, y = `VARIANTS/KB`, color = CHROM)) +
-  geom_col() +
+  geom_line() +
   scale_color_viridis_d(name = "CHROM") + 
   labs(
-      x = "Position", 
-      y = "Variant Density",
-      title = "Variant Density Across Genome") +
+    x = "Position", 
+    y = "Variant Density",
+    title = "Variant Density Across Genome") +
   theme_bw () +
-  facet_wrap(~CHROM, scales = "free_x")
+  facet_wrap(~CHROM, scales = "free_x") + 
+  theme(axis.text.x = element_text(size = 4))
 
 print(snpplot)
 ```
