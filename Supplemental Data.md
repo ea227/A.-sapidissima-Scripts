@@ -2,10 +2,11 @@
 
 Variant information was accessed for 20000 bp windows using vcftools v0.1.17, and output as a .tsv file: 
 ```
-vcftools --gzvcf shad.vcf.gz --SNPDensity 20000 --out filename
+vcftools --gzvcf Asap001.filtered.ann.noMito.vcf.gz --SNPDensity 20000 --out Asap001
 ```
 The following plot shows variant density visualized in windows of 20000 bp, separated by chromosome number: 
-[variantdensityplot.pdf](https://github.com/user-attachments/files/19489152/variantdensityplot.pdf)
+[variantdensityplot.pdf](https://github.com/user-attachments/files/22197407/variantdensityplot.pdf)
+
 
 ## **fastp Reports**
 

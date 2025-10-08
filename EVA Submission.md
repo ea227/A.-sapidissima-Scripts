@@ -1,7 +1,7 @@
 # Submitting the variant data to the EVA
 The code below is for submitting the variant data (i.e., vcf file) to the European Variation Archive ([EVA](https://www.ebi.ac.uk/eva/))
 
-I first made sure that the sample name in the VCF file matched the BioSample ID (**_Asap-001_**), and that the mitochondrial contig (NC_014690.1) was removed. The code for this can be found in [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling.md). Next, I had to remove the following line (was offending to the eva-submit software):
+First the VCF file name was made to match the BioSample ID (**_Asap-001_**), and the mitochondrial contig (NC_014690.1) was removed. The code for this can be found in [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling.md). Next, the following line was removed (it was offending to the eva-submit software):
 
 ```bash
 # Unzip the vcf file
@@ -14,7 +14,7 @@ gunzip Asap001.filtered.ann.noMito.vcf.gz
 bgzip Asap001.filtered.ann.noMito.vcf
 ```
 
-Next, I installed the [eva v0.4.7](https://github.com/EBIvariation/eva-sub-cli) submission software using conda, validated the VCF, then submitted it to the EVA.
+Next, the [eva v0.4.7](https://github.com/EBIvariation/eva-sub-cli) submission software was installed using conda, the VCF was validated, then submitted to the EVA.
 
 ```
 # Install eva-sub-cli
