@@ -27,8 +27,7 @@ conda activate eva
 
 # Validate via eva-sub-cli
 eva-sub-cli.py \
-   --metadata_xlsx \
-   Asap-001_EVA_Submission.V2.0.1.xlsx \
+   --metadata_xlsx Asap-001_EVA_Submission.V2.0.1.xlsx \
    --submission_dir . \
    --tasks VALIDATE \
    --debug

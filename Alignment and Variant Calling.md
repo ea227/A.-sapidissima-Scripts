@@ -12,7 +12,6 @@ rg="@RG\tID:${SRR}\tSM:${SRR}\tPL:illumina\tLB:run1"
 # Run bwa mem
 bwa mem \
       -M \
-      -p \
       -R "$rg" \
       -t ${threads} \
       Asap.fa \
@@ -22,7 +21,6 @@ bwa mem \
 
 - _Parameters Explained:_
   - ***-M*** :: mark shorter split hits as secondary
-  - ***-p*** :: smart pairing (ignoring in2.fq), in other words, data input are interleaved fastq
   - ***-R*** :: Read group ID line (i.e. sample name)
   - ***-t*** :: number of cpus to use
 
