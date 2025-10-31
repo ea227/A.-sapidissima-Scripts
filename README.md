@@ -2,7 +2,7 @@
 
 <h2><p align="center">Analyses of variant data across the whole genome of the American Shad, <i>Alosa sapidissima</i></p></h2>
 
-<I><h5>Ella S. Adams-Herrmann<sup>1</sup>, Lauren Deaner<sup>1</sup>, Tara Morgan<sup>1</sup>, Sönke Johnsen<sup>2</sup>,  Benjamin R. Wheeler<sup>2,3</sup>, Robert R. Fitak<sup>1</sup></h5></I>
+<I><h5>Ella S. Adams-Herrmann<sup>1</sup>, Tara Morgan<sup>1</sup>, Lauren Deaner<sup>1</sup>, Sönke Johnsen<sup>2</sup>,  Benjamin R. Wheeler<sup>2,3</sup>, Robert R. Fitak<sup>1</sup></h5></I>
 
 1. Department of Biology, Genomics and Bioinformatics Cluster, University of Central Florida, Orlando, FL 32816, USA
 2. Department of Biology, Duke University, 130 Science Drive, Durham, NC 27708, USA
