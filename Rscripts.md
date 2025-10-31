@@ -176,21 +176,25 @@ jitter<- position_jitter(height = 0.4, seed = 143)
 chrom_labels <- chrom_levels
 chrom_labels[chrom_labels == "Unplaced"] <- ""
 
+#version 1, single column
+
+tiff("high_impact_variants.tiff", width = 3543, height = 2200, res = 1000, compression = "lzw")
+
+
 # generate graph using grid so numbers and "unplaced" x-axis labels easily readable
 p <- ggplot(highest, aes(x = CHROM, y = variants_impact_HIGH, label = GeneId)) +
-  geom_jitter(data = subset_high, position = jitter, size = 1.5, shape = 21, fill = "red", color = "black") +
-  geom_jitter(data = subset_low, position = jitter, size = 1.5) +
+  geom_jitter(data = subset_high, position = jitter, size = 0.75, shape = 21, fill = "red", color = "black") +
+  geom_jitter(data = subset_low, position = jitter, size = 0.75) +
   ggrepel::geom_label_repel(data = subset_high, position = jitter_nudge,
-                            size = 3, force_pull = 100, force = 0.7) +
+                            size = 2.1, force_pull = 90, force = 0.75, label.padding= 0.15, point.padding=0.1) +
   geom_hline(yintercept = 9, linetype = "dashed", color = "red", linewidth = 0.7)+
   scale_x_discrete(drop = FALSE, labels = chrom_labels) +
   scale_y_continuous(breaks = seq(1, 23, 2)) +
   theme(
-    axis.text.x = element_text(size = 12),
-    plot.margin = margin(t = 10, r = 10, b = 60, l = 10),
-    axis.title.x = element_text(margin=margin(t=40), size= 14),
-    axis.text.y = element_text(size = 12),
-    axis.title.y = element_text(size= 14)
+    axis.text.x = element_text(size = 6.5, color = "black"),
+    axis.title.x = element_text(margin=margin(t=6), size= 8),
+    axis.text.y = element_text(size = 6.5, color = "black"),
+    axis.title.y = element_text(size= 8)
   ) +
   labs(x = "Chromosome", y = "Number of High Impact Variants")
 
@@ -201,8 +205,42 @@ pushViewport(vp)
 print(p, vp = vp)
 
 
-grid.text("Unplaced", x = unit(0.965, "npc"), y = unit(0.225, "npc"),
-          gp = gpar(fontsize = 10), rot = -90)
+grid.text("Unplaced", x = unit(0.96, "npc"), y = unit(0.08, "npc"),
+          gp = gpar(fontsize = 6), rot = -90)
+
+dev.off()
+
+tiff("high_impact_variants_ver4.tiff", width = 5512, height = 4000, res = 1000, compression = "lzw")
+
+
+# generate graph using grid so numbers and "unplaced" x-axis labels easily readable
+p <- ggplot(highest, aes(x = CHROM, y = variants_impact_HIGH, label = GeneId)) +
+  geom_jitter(data = subset_high, position = jitter, size = 1.5, shape = 21, fill = "red", color = "black") +
+  geom_jitter(data = subset_low, position = jitter, size = 1.5) +
+  ggrepel::geom_label_repel(data = subset_high, position = jitter_nudge,
+                            size = 3, force_pull = 90, force = 0.75, label.padding= 0.15, point.padding=0.1) +
+  geom_hline(yintercept = 9, linetype = "dashed", color = "red", linewidth = 0.7)+
+  scale_x_discrete(drop = FALSE, labels = chrom_labels) +
+  scale_y_continuous(breaks = seq(1, 23, 2)) +
+  theme(
+    axis.text.x = element_text(size = 8, color = "black"),
+    axis.title.x = element_text(margin=margin(t=14), size= 9),
+    axis.text.y = element_text(size = 8, color = "black"),
+    axis.title.y = element_text(size= 9)
+  ) +
+  labs(x = "Chromosome", y = "Number of High Impact Variants")
+
+# draw plot
+grid.newpage()
+vp <- viewport(layout = grid.layout(1, 1))
+pushViewport(vp)
+print(p, vp = vp)
+
+
+grid.text("Unplaced", x = unit(0.964, "npc"), y = unit(0.063, "npc"),
+          gp = gpar(fontsize = 8), rot = -90)
+
+dev.off()
 ```
 
 
