@@ -12,7 +12,7 @@
 
 The bioinformatic analysis of the raw sequencing reads is described here, including links and citations to software versions and the scripts used. All analyses were run on the Coombs computer cluster at the University of Central Florida (UCF). Coombs is a Linux server currently running Ubuntu 20.04.6 LTS.
 
-All sequence data referenced herein are attributed to an award from the The Sequencing and Genomic Technologies Shared Resource at the Duke Center for Genomic and Computational Biology (Duke University). Sequencing was done by (R. Fitak). Samples and assistance were provided by Stephen Jackson and Kevin Dockendorf at the Edenton National Fish Hatchery.
+All sequence data referenced herein are attributed to an award from the The Sequencing and Genomic Technologies Shared Resource at the Duke Center for Genomic and Computational Biology (Duke University), where library prep and sequencing were also perfromed. Sequencing was done on an Illumina NovaSeq 6000. Samples and assistance were provided by Stephen Jackson and Kevin Dockendorf at the Edenton National Fish Hatchery.
 
 The reference genome was sequenced and assembled at the Vertebrate Genomes Lab at Rockefeller University for the Vertebrate Genomes Project (VGP) and coordinated by Olivier Fedrigo and Erich D. Jarvis. Reid Hyle collected a sample for Nina Overgaard Therkildsen from the St. Johns River, Florida, USA for genome assembly.
 
@@ -53,11 +53,18 @@ ___This GitHub repository contains a summary of the various code, software, and 
 | samtools | 1.10.2 |  Danecek, P., Bonfield, J. K., Liddle, J., Marshall, J., Ohan, V., Pollard, M.O., Whitwham, A., Keane, T., McCarthy, S.A., Davies, R.M., Li, H. (2021) Twelve years of SAMtools and BCFtools. GigaScience, Volume 10, Issue 2, giab008, https://doi.org/10.1093/gigascience/giab008 |
 | bcftools | 1.10.2 | Danecek, P., Auton, A., Abecasis, G., Albers, C.A., Banks, E., DePristo, M.A., Handsaker, R., Lunter, G., Marth, G., Sherry, S.T., McVean, G., Durbin, R., and 1000 Genomes Project Analysis Group, (2011). The Variant Call Format and VCFtools. Bioinformatics, 27(15), 2156-2158. https://doi.org/10.1093/bioinformatics/btr330 |
 | vcftools | 0.1.17 | Danecek, P., Auton, A., Abecasis, G., Albers, C.A., Banks, E., DePristo, M.A., Handsaker, R., Lunter, G., Marth, G., Sherry, S.T., McVean, G., Durbin, R., and 1000 Genomes Project Analysis Group, (2011). The Variant Call Format and VCFtools. Bioinformatics, 27(15), 2156-2158. https://doi.org/10.1093/bioinformatics/btr330 |
-| SnpEff | 5.2f | Cingolani P, Platts A, Wang le L, Coon M, Nguyen T, Wang L, Land SJ, Lu X, Ruden DM. (2012). Using Drosophila melanogaster as a model for genotoxic chemical mutational studies with a new program, SnpSift, Fly, Volume 6, Number 2, Pages 80-92|
+| SnpEff | 5.2e | Cingolani P, Platts A, Wang le L, Coon M, Nguyen T, Wang L, Land SJ, Lu X, Ruden DM. (2012). Using Drosophila melanogaster as a model for genotoxic chemical mutational studies with a new program, SnpSift, Fly, Volume 6, Number 2, Pages 80-92|
 | R | 4.4.1 |  R Core Team (2024). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.|
 |eva-sub-cli | 0.4.7 | https://github.com/EBIvariation/eva-sub-cli |
 | tidyverse | 2.0.0 | Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686.|
-|  ggplot2 | 3.5.1 | H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. |
+| ggplot2 | 3.5.1 | H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. |
+| ggpp | 0.5.9 | Aphalo, P.J. (2025). ggpp: Grammar Extensions to “ggplot2,” R package v0.5.9 https://CRAN.R-project.org/package=ggpp |
+| ggrepel | 0.9.5 | Slowikowskim K. (2024). ggrepel: Automatically Position Non-Overlapping Text Labels with “ggplot2,” R package v0.9.5 https://ggrepel.slowkow.com |
+| vcfR | 1.15.0 | Knaus, B.J., Grünwald, N.J. (2017). vcfR : a package to manipulate and visualize variant call format data in R, Molecular Ecology Resources 17(1) 44–53. https://doi.org/10.1111/1755-0998.12549 |
+
+
+
+
 
 
 
