@@ -35,7 +35,7 @@ fastp \
     --out1 ${SRR}.finalclean_1.fq.gz \ 
     --out2 ${SRR}.finalclean_2.fq.gz
 ```
-- _Parameters Explained:_
+_Parameters Explained:_
   - ***--in1/--in2*** :: input forward and reverse read files, recognizes gzip
   - ***--adapter_fasta file*** :: a file of known Illumina adapters to trim
   - ***--cut_front*** :: enable a 5' sliding window trimmer, like trimmomatic
@@ -99,7 +99,7 @@ SRR=SRR7973880
 ```
 
 _NxTrim Parameters Explained:_
-  - ***-1/-2*** :: input reads
+  - _-1/-2_ :: input reads
   - ***--a*** :: aggressive adaptor search
   - ***-l*** :: minimum length of 50 bp after processing
   - ***--stdout*** :: pipe directly to standard out (directly to fastp)
