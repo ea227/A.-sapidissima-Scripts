@@ -19,7 +19,7 @@ bwa mem \
       ${SRR}.finalclean_2.fq.gz | the output was piped into samtools
 ```
 
-- _Parameters Explained:_
+_Parameters Explained:_
   - ***-M*** :: mark shorter split hits as secondary
   - ***-R*** :: Read group ID line (i.e. sample name)
   - ***-t*** :: number of cpus to use
