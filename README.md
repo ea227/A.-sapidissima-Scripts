@@ -43,6 +43,7 @@ ___This GitHub repository contains a summary of the various code, software, and 
 3. [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling.md)
 4. [EVA Submission](./EVA%20Submission.md)
 5. [R Analyses](./Rscripts.md)
+6. [Supplemental Data](https://github.com/ea227/A.-sapidissima-Scripts/blob/main/Supplemental%20Data.md)
 
 **Software and Programs Used**
 
