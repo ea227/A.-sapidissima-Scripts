@@ -17,7 +17,7 @@ fasterq-dump \
 _Parameters explained:_
 - _--progress_ :: show progess bar during download
 - _--threads_ :: the number of cpu threads to use, increases parallelization
-- --split_files :: splits the fastq read files into separate forward (${SRR}_1.fastq.gz) and reverse (${SRR}_2.fastq.gz) read files.
+- _--split_files_ :: splits the fastq read files into separate forward (${SRR}_1.fastq.gz) and reverse (${SRR}_2.fastq.gz) read files.
 
 Alternatively, there were occassional download issues using `fasterq-dump`. If so, then read files were first downoaded using `prefetch` in the `.sra` format and then converted to fastq format like this:
 ```bash
