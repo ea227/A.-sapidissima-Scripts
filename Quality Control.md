@@ -99,7 +99,7 @@ SRR=SRR7973880
 ```
 
 _NxTrim Parameters Explained:_
-  - _-1/-2_ :: input reads
+  - _--1/-2_ :: input reads
   - _--a_ :: aggressive adaptor search
   - _--l_ :: minimum length of 50 bp after processing
   - _--stdout_ :: pipe directly to standard out (directly to fastp)
