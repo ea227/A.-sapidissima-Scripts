@@ -14,7 +14,8 @@ The bioinformatic analysis of the raw sequencing reads is described here, includ
 
 All sequence data referenced herein are attributed to an award from the The Sequencing and Genomic Technologies Shared Resource at the Duke Center for Genomic and Computational Biology (Duke University), where library prep and sequencing were also perfromed. Sequencing was done on an Illumina NovaSeq 6000. Samples and assistance were provided by Stephen Jackson and Kevin Dockendorf at the Edenton National Fish Hatchery.
 
-The reference genome was sequenced and assembled at the Vertebrate Genomes Lab at Rockefeller University for the Vertebrate Genomes Project (VGP) and coordinated by Olivier Fedrigo and Erich D. Jarvis. Reid Hyle collected a sample for Nina Overgaard Therkildsen from the St. Johns River, Florida, USA for genome assembly.
+The reference genome was sequenced and assembled at the Vertebrate Genomes Lab at Rockefeller University for the Vertebrate Genomes Project (VGP) and coordinated by Olivier Fedrigo and Erich D. Jarvis. Reid Hyle collected a sample for Nina Overgaard Therkildsen from the St. Johns River, Florida, USA for genome assembly. Further information on the referene genome can be found in Velotta et al. 2025: https://doi.org/10.1093/gbe/evae276
+
 
 All project, sample information, and raw sequencing data are publicly available and can be accessed by the following NCBI accession numbers:
 
