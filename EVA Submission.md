@@ -1,5 +1,5 @@
 # Submitting the variant data to the EVA
-The code below is for submitting the variant data (i.e., vcf file) to the European Variation Archive ([EVA](https://www.ebi.ac.uk/eva/))
+The code below is for submitting the variant data (i.e., VCF file) to the European Variation Archive ([EVA](https://www.ebi.ac.uk/eva/))
 
 First the VCF file name was made to match the BioSample ID (**_Asap-001_**), and the mitochondrial contig (NC_014690.1) was removed. The code for this can be found in [Alignment and Variant Calling](./Alignment%20and%20Variant%20Calling.md). Next, the following line was removed (it was offending to the eva-submit software):
 
