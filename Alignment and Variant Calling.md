@@ -48,7 +48,7 @@ samtools sort \
              - ${SRR}.sorted.bam
 ```
 
-- _Parameters Explained:_
+_Parameters Explained:_
   - ***sort -n*** :: sort BAM file numerically
   - ***fixmate -m*** :: fixmates and add mate score tag
   - ***markdup*** :: mark PCR/optical duplicates for later removal.
